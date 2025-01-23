@@ -35,9 +35,12 @@ services:
     ports:
       - "3001:3001"
       - "5800:5800"
+    volumes:
+      - .:/app
     depends_on:
       - postgres
     restart: unless-stopped
+    command: npm run start
 
 volumes:
   pgadmin:
